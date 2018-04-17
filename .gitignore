@@ -1,6 +1,8 @@
-.idea
-.env
-/config/secrets.php
-/config/app.php
-/public/coverage
 /vendor
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+storage/*.key
+*.DS_Store
+yarn-error.log

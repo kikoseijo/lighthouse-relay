@@ -15,10 +15,10 @@ class CreateLocationsTable extends Migration
         Schema::create('api_locations', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('reference', 63)->uuid();
-            $table->string('name', 127);
-            $table->string('email', 127);
-            $table->string('details');
+            $table->string('reference', 63)->uuid()->nullable();
+            $table->string('name', 127)->nullable();
+            $table->string('email', 127)->nullable();
+            $table->string('details')->nullable();
             });
 
         Schema::create('api_client_locations', function(Blueprint $table)

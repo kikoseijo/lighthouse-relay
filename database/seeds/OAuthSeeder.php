@@ -17,7 +17,7 @@ class OAuthSeeder extends Seeder {
         $connection = $db->connection();
         /* @var $connection Illuminate\Database\MySqlConnection */
 
-        $connection->statement('SET FOREIGN_KEY_CHECKS=0');
+        // $connection->statement('SET FOREIGN_KEY_CHECKS=0');
 
         // clear the users table first
         $db->table('api_users')->delete();
@@ -39,6 +39,9 @@ class OAuthSeeder extends Seeder {
                     'id' => $client['id'],
                     'secret' => $client['secret'],
                     'name' => $client['name'],
+                    'redirect' => '',
+                    'personal_access_client' => false,
+                    'revoked' => false,
                     'password_client' => true,
                     'location' => isset($client['location']) ? $client['location'] : '',
                     'created_at' => new DateTime(),
@@ -65,7 +68,7 @@ class OAuthSeeder extends Seeder {
 
         }
 
-        $connection->statement('SET FOREIGN_KEY_CHECKS=1');
+        // $connection->statement('SET FOREIGN_KEY_CHECKS=1');
 
     }
 

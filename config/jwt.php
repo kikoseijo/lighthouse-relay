@@ -21,7 +21,7 @@ return [
     |
     */
 
-    'secret' => env('JWT_SECRET', file_get_contents('/run/keys/mancloud.local.api.salt')),
+    'secret' => env('JWT_SECRET', 'jasdflñjdslfjasdfiqweupoi'),
 
     /*
     |--------------------------------------------------------------------------

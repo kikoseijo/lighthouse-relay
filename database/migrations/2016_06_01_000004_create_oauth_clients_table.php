@@ -18,10 +18,10 @@ class CreateOauthClientsTable extends Migration
             $table->integer('user_id')->index()->nullable();
             $table->string('name');
             $table->string('secret', 100);
-            $table->text('redirect');
-            $table->boolean('personal_access_client');
-            $table->boolean('password_client');
-            $table->boolean('revoked');
+            $table->text('redirect')->nullable();
+            $table->boolean('personal_access_client')->default(0);
+            $table->boolean('password_client')->default(0);
+            $table->boolean('revoked')->default(0);
             $table->timestamps();
         });
     }
