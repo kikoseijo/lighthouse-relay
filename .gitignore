@@ -1,0 +1,6 @@
+.idea
+.env
+/config/secrets.php
+/config/app.php
+/public/coverage
+/vendor

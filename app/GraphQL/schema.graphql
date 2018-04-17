@@ -1,0 +1,40 @@
+scalar DateTime @scalar(class: "DateTime")
+
+type User {
+  id: ID! @globalId
+  name: String
+  email: String
+  created_at: DateTime
+  updated_at: DateTime
+}
+
+type Room {
+  id: ID! @globalId
+  name: String
+  available: String
+  reference: String
+  details: String
+  location: String
+  comments: [RoomComment!]! @hasMany(type: "relay", relation: "comments")
+}
+
+type RoomComment {
+  id: ID! @globalId
+  reference: String
+  title: String
+  content: String
+  created_at: DateTime
+  room: Room! @belongsTo
+}
+
+type ResponsesPayload {
+  success: Boolean!
+  msg: String
+  payload: String
+}
+
+type Query {
+  viewer: User @auth
+  rooms: [Room!]! @paginate(type: "relay", model: "App\\Models\\Room\\Room")
+}
+
