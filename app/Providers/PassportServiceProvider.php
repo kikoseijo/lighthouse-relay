@@ -24,7 +24,7 @@ class PassportServiceProvider extends LaravelPassportServiceProvider
     public function boot()
     {
         // override key path
-        Passport::$keyPath = '/run/keys';
+        // Passport::$keyPath = '/run/keys';
 
         parent::boot();
     }
