@@ -17,7 +17,7 @@ return [
 
     'route' => [
         'prefix' => '',
-        'middleware' => ['auth:api', 'scopes:graphql'],    // [ 'loghttp']
+        'middleware' => [],    // [ 'loghttp']
     ],
 
 
